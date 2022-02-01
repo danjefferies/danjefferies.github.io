@@ -1,0 +1,30 @@
+body {
+    color: white;
+    background-color: #BDD180;
+}
+
+p {
+color: black; 
+margin: 20px;
+}
+
+p#bluegraf {
+    color:white;
+    background-color: blue;
+    font-family:'comic sans ms';
+    font-size: 14px;
+}
+
+h1 {
+font-family:cursive;
+font-size: 45px; 
+color: yellow; background-color: #222222; 
+margin:0; 
+padding:10px; 
+text-align: center;  
+}
+
+.square{
+    height: 100px;
+    width: 100px;
+}
