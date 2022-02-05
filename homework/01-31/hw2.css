@@ -1,0 +1,38 @@
+body {
+    color: white;
+    background-color: "white";
+}
+
+line {
+    stroke: black;
+    stroke-width: 2px;
+  }
+
+  circle#main{
+    fill: transparent;
+    cx: 165px; cy: 165px;
+  }
+
+  circle#side{
+    cx:100px; cy:270px; r:45px;
+  }
+
+  circle#half1{
+    cx:395px; cy:285px;
+  }
+
+  circle#half2{
+    cx:575px; cy:240px;
+  }
+
+  circle#small1{
+    cx:405px; cy:369px;
+  }
+
+  circle#small2{
+    cx:515px; cy:339px;
+  }
+
+  circle#small3{
+    cx:625px; cy:309px;
+  }
