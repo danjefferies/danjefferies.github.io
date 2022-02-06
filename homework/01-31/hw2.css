@@ -37,6 +37,12 @@ line {
     cx:625px; cy:309px;
   }
 
+  .rounded{
+    stroke:black;
+    stroke-width:5px;
+    stroke-linecap:round;
+  }
+
   polygon#purple{
     fill:rebeccapurple; 
     stroke:black; 
