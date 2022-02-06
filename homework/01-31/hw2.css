@@ -36,3 +36,16 @@ line {
   circle#small3{
     cx:625px; cy:309px;
   }
+
+  polygon#purple{
+    fill:rebeccapurple; 
+    stroke:black; 
+    stroke-width:2px
+  }
+
+  .square{
+    height: 100px;
+    width: 100px;
+    stroke: black;
+    stroke-width: 2px;
+  }
