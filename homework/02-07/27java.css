@@ -1,0 +1,23 @@
+h1{
+    background-color: #F8E1CC;
+    color: #341902;
+    margin: 20px;
+    padding: 5px;
+    font-family:cursive;
+    font-size: 60px; 
+    text-align:center;
+}
+
+ul#list{
+    list-style-type: circle;
+    color: #341902;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    line-height: 115%;
+}
+
+li#ogawa{
+    background-color: #ADC883;
+    padding:7px;
+    width: 120px;
+}
