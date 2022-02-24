@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Homework #4</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      body{
+        background: #BDD180;
+        text-align: center;
+        align-items: center;
+      }
+
+      h1{
+        color: rgb(49, 48, 48);
+        background-color: white;
+        font-family:'Times New Roman', Times, serif;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to the first annual running of the <span style="color:#ed174f">Kentucky D3rby</span></h1>
+
+    <img src="rose.png" alt="ky derby rose" style="width:100px;" />
+
+    <svg id="horseCanvas" height="500px" width="100%">
+      <rect x="130" y="25" rx="150" ry="150" width="1150" height="450" 
+        fill="#526732"/>
+
+      <rect x="205" y="100" rx="150" ry="150" width="1000" height="300" 
+        stroke="#DDC690" stroke-width="100px" fill="transparent"/>
+
+      <rect x="1000" y="357" width="10px" height="86px"
+        stroke="black" stroke-width="15px"/>
+    </svg>
+
+    <script src="horse_data.js"></script>
+
+    <script>
+
+       // sleep function for full transition effect
+        function sleep(ms) {
+              return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+      function drawHorses(dataArray){
+        // Data binding
+        var horses = d3.select("#horseCanvas")
+          .selectAll("image")
+          .data(dataArray, function(currentDataPoint){
+            // console.log(currentDataPoint.horse);
+            return currentDataPoint.horse;
+          });
+
+
+        // Enter
+        horses.enter().append("svg:image")
+            .attr("xlink:href", function(d){
+              return `${d.horse}.png`;
+            })
+            .attr("width", 100)
+            .attr("height", 100)
+            .attr("y", function(d){
+              return d.yvalue;
+            })
+            .attr("x", function(d){
+              return d.value * 10;
+            });
+
+        // Update
+        horses.transition().duration(4000)
+        .attr("y", function(d){
+              return d.yvalue;
+            })
+        .attr("x", function(d){
+              return d.value * 10;
+            })
+
+        // Exit
+        horses.exit()
+            .transition().duration(3000)
+            .remove();
+        }
+
+        // create list of datasets
+        datasets = [];
+
+        // populate list
+        datasets.push(dataFinish, dataMid, dataMid1, dataMid2, dataStart);
+
+        // select first dataset; initially draw horses
+        currData = datasets.pop();
+        drawHorses(currData);
+
+        async function change() {
+
+          //reset case
+          if (currData == dataFinish){
+            datasets.unshift(currData);  //reintroduce to list
+            currData = datasets.pop();
+            drawHorses(currData);
+            return;
+          }
+
+          //first motion
+          datasets.unshift(currData);
+          currData = datasets.pop();
+          drawHorses(currData);
+
+          //time sleep
+          await sleep(3000);
+
+          //second motion
+          datasets.unshift(currData);
+          currData = datasets.pop();
+          drawHorses(currData);
+
+          //time sleep
+          await sleep(4500);
+
+          //third motion
+          datasets.unshift(currData);
+          currData = datasets.pop();
+          drawHorses(currData);
+
+          //time sleep
+          await sleep(4500);
+
+          //fourth motion
+          datasets.unshift(currData);
+          currData = datasets.pop();
+          drawHorses(currData);
+        
+        }
+
+    </script>
+
+  <input type="button" onclick="change()" value="And they're off!"/>
+
+  <p><a href="/index.html">Thanks for coming! Let's go home</a></p>
+  
+  </body>
+</html>

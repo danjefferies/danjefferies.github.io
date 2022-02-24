@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Java testing 3</title>
+    <style>
+        body{
+            align-items: center;
+            background: #BDD180;
+        }
+    </style>
+    <script>
+        var image_tracker = "start";
+        function change() {
+            var image = document.getElementById("start.png");
+            if(image_tracker=="start"){
+                image.src="end.png";
+                image.style.height="400px";
+                image_tracker="end";
+            }
+            else{
+                image.src="start.png";
+                image_tracker="start";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <img src="start.png" alt="horse" id="start.png"/>
+    <input type="button" onclick="change()" value="Poof!"/>
+</body>
+
+</html>
