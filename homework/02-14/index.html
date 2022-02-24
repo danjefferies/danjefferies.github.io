@@ -9,19 +9,37 @@
         background: #BDD180;
         text-align: center;
         align-items: center;
+        font-family:Georgia, Times, 'Times New Roman', serif;
+        font-size: 13px;
       }
 
       h1{
-        color: rgb(49, 48, 48);
-        background-color: white;
-        font-family:'Times New Roman', Times, serif;
-        font-size: 30px;
+          color: rgb(49, 48, 48);
+          background-color: white;
+          font-family:Georgia, Times, 'Times New Roman', serif;
+          font-size: 28px;
+      }
+
+      .button {
+          background-color: whitesmoke;
+          color: rgb(49, 48, 48);
+          padding: 8px 8px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          border:0.16em solid rgb(49, 48, 48);
+          font-size: 14px;
+          font-family:Georgia, Times, 'Times New Roman', serif;
+          border-radius: 10px;
+      }
+      .button:hover{
+          border:0.3em solid #ed174f;
       }
     </style>
   </head>
 
   <body>
-    <h1>Welcome to the first annual running of the <span style="color:#ed174f">Kentucky D3rby</span></h1>
+    <h1>Welcome to the first annual running of the <span style="font-style:italic; color:#ed174f">Kentucky D3rby</span></h1>
 
     <img src="rose.png" alt="ky derby rose" style="width:100px;" />
 
@@ -137,7 +155,7 @@
 
     </script>
 
-  <input type="button" onclick="change()" value="And they're off!"/>
+  <input class="button" type="button" onclick="change()" value="And they're off!"/>
 
   <p><a href="/index.html">Thanks for coming! Let's go home</a></p>
   
