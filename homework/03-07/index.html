@@ -6,6 +6,16 @@
         <script src="https://d3js.org/d3.v7.min.js"></script>
     </head>
     <body>
+        <h3>
+            Task: load in Kentucky derby dataset as CSV
+        </h3>
 
+        <script>
+        d3.csv("kyderby_update.csv")
+        .then(function(csvData){
+            console.log("kyderby", csvData);
+        }); 
+
+        </script>
     </body>
 </html>
