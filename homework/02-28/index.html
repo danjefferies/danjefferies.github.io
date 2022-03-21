@@ -7,57 +7,106 @@
             h3 {
                 color:black;
                 background-color: #BDD180;
-                width: 40%;
+                width: 30%;
                 margin: 10px;
                 padding: 10px;
-}
+            }
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+                }
+
+                td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+                }
         </style>
     </head>
     <body>
        <h3>
            ...Built a dataset by scraping Wikipedia
        </h3>
+
        <p class="indent"><a href="https://docs.google.com/spreadsheets/d/1zoXrBYn_3Ucoa6bwAMEKgQ-F5S3f8y_zEMYMsNbciFw/edit?usp=sharing"
         target="_blank" rel="noopener noreferrer">Kentucky Derby data</a></p>
-       <ul class="customIndent">
-           <li>Categorical: winner, jockey, trainer, owner, track condition, state bred in, sex  </li>
-           <li>Numerical: distance, time, wins, odds, starts, w/p/s, wps ratio, superfecta payout</li>
-           <li>Boolean: triple crown status </li>
-       </ul>
+
+        <p>Data falls into 3 categories: general info, the jockey, the horse</p>
+
+       <table>
+        <caption>Possible analyses</caption>
+        <tr>
+          <td></td>
+          <th scope="col">Time</th>
+          <th scope="col">Odds</th>
+          <th scope="col">Starts, WPS, WPS ratio</th>
+          <th scope="col">Superfecta payout</th>
+          <th scope="col">(jockey-specific) No. of derby wins</th>
+
+        </tr>
+        <tr>
+            <th scope="row">Year, grouped by decades</th>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>Avg</td>
+            <td></td>
+          </tr>
+        <tr>
+          <th scope="row">Repeated Names (Jockey, trainer, owner)</th>
+          <td>i.e. the trainer's avg time</td>
+          <td>x</td>
+          <td></td>
+          <td>i.e. the avg winning payout when a certain jockey is riding</td>
+          <td>x</td>
+        </tr>
+        <tr>
+          <th scope="row">Track condition</th>
+          <td>x</td>
+          <td></td>
+          <td></td>
+          <td>x</td>
+          <td></td>
+        </tr>
+
+        <tr>
+            <th scope="row">State horse was bred in</th>
+            <td>x</td>
+            <td></td>
+            <td>wps ratio</td>
+            <td>Avg</td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <th scope="row">Sex of racehorse</th>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <th scope="row">Triple crown status</th>
+            <td>x</td>
+            <td>x</td>
+            <td>i.e. when TRUE, what is the avg wps ratio?</td>
+            <td>x</td>
+            <td></td>
+          </tr>
+      </table>
+
+      <h3>Other research questions:</h3>
+      <ul>
+          <li>How do odds affect superfecta payout?</li>
+          <li>Does number of jockey ky derby wins affect superfecta payout?</li>
+          <li>Are horses bred in KY actually faster?</li>
+          <li>Stats on the 3 fillies to win the derby</li>
+          <li>Decline in number of starts in early 1900s vs. today</li>
+      </ul>
 
 
-       
-        <h4>
-           Previous ideas for potential final project:
-        </h4>
-    
-    
-        <p class="indent"><a href="https://zenodo.org/record/44529#.YiYueBPMIbk" target="_blank" rel="noopener noreferrer">Food allergies in children</a></p>
-        <ul class="customIndent">
-            <li>Numeric variables: birth yr, age of onset</li>
-            <li>Categorical variables: gender, race/ethnicity, insurance, what they're allergic to, symptom</li>
-            <li>A lot of NAs since most kids only have one or two allergies - but a huge dataset</li>
-        </ul>
-    
-        <p class="indent"><a href="https://www.kaggle.com/sergegeukjian/fish-and-overfishing" target="_blank" rel="noopener noreferrer">Sustainable fisheries</a></p>
-        <ul class="customIndent">
-            <li>Numeric: year, amount of fish produced via aquaculture/fisheries, seafood consumption, sustainable and exploited fish shares (%) </li>
-            <li>Categorical: country, region </li>
-            <li>Several datasets, would have to merge</li>
-        </ul>
-    
-        <p class="indent"><a href="https://www.hydroshare.org/resource/de4190f0eff74b09a5e0844a0de482a5/" target="_blank" rel="noopener noreferrer">Global inland fisheries expert survey</a></p>
-        <ul class="customIndent">
-            <li>Numeric: lat, long, threat from 1-10</li>
-            <li>Categorical: region, subregion </li>
-            <li>Most values are "present/absent" with a corresponding numeric value if present </li>
-        </ul>
-    
-        <p class="indent"><a href="https://ourworldindata.org/micronutrient-deficiency#micronutrient-deficiency-is-more-prevalent-in-countries-with-poor-dietary-diversity" target="_blank" rel="noopener noreferrer">Micronutrient deficinecy</a></p>
-        <ul class="customIndent">
-            <li>Specifically comparing these elements: diet diversity, GDP and hidden hunger index</li>
-            <li>Numeric: year, hunger index, population, </li>
-            <li>Categorical: country (needs lat, long) </li>
-        </ul>
     </body>
 </html>
