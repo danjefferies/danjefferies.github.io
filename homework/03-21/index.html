@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Bar Chart Homework</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      body {
+        margin: 0px;
+        background-color: darkgrey;
+      }
+
+      .axisWhite line{
+        stroke: white;
+      }
+
+      .axisWhite path{
+        stroke: white;
+      }
+
+      .axisWhite text{
+        fill: white;
+      }
+    </style>
+</head>
+<body>
+
+    <!-- Create a div where the graph will take place -->
+    <div id="first_chart">
+
+        <svg id="barchart">
+            <g id="shapes"></g>
+            <g id="x"></g>
+            <g id="y"></g>
+            </svg>
+
+        <script>
+            var url = "https://whiteboard.datawheel.us/api/google-analytics/realtime/random";;
+            var frequency = 3 * 1000;       // 3 seconds
+            var dataMax = 7;
+            var data = [ ];
+
+            // set the dimensions and margins of the graph
+            var margin = {top: 10, right: 30, bottom: 90, left: 60};
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            var barWidth = width / dataMax;
+            var chartWidth = width - margin.left - margin.right;
+            var chartHeight = height - margin.top - margin.bottom;
+
+            // select the svg
+            var svg = d3.select("#barchart")
+                .attr("width", width)
+                .attr("height", height);
+
+            
+            var domainValues = d3.range(1, dataMax + 1);
+
+            // create an X scale using scaleBand
+            var x = d3.scaleBand()
+                .range([margin.left, margin.left + chartWidth])
+                .domain(domainValues.reverse())
+                .paddingInner(0.1)
+                .paddingOuter(0.2);
+            
+            
+             var barWidth = x.bandwidth();
+    
+            // create a Y scale
+             var y = d3.scaleLinear()
+             .domain()
+
+            
+             svg.append("text")
+                .attr("class", "xlab")
+                .attr("text-anchor", "end")
+                .attr("x", width - 425)
+                .attr("y", height - 50)
+                .text("Time (seconds)");
+
+              svg.append("text")
+                .attr("class", "ylab")
+                .attr("text-anchor", "end")
+                .attr("y", chartHeight/2)
+                .attr("dy", "-17.5em")
+                .attr("transform", "rotate(-90)")
+                .text("Life expectancy (years)");
+
+            // ANYTHING BELOW HERE GOES INTO THE FUNCTION EVERY ITERATION
+            // create a function to invoke data at an interval
+            function fetchData() {
+            
+            d3.json(url)
+            .then(function(users){ // load json, call that number 'users'
+            
+                data.unshift({
+                users: users,
+                timestamp: new Date()
+                });
+                
+                if (data.length > dataMax) data.pop();
+
+                var maxUsers = d3.max(data, function(d){
+                return d.users;
+                })
+
+            // create a height scale
+            var barHeight = d3.scaleLinear()
+              .domain([0, maxUsers])
+              .range([0, chartHeight]);
+
+            var y = d3.scaleLinear()
+              .domain([0, maxUsers])
+              .range([margin.top + chartHeight, margin.top]);
+
+            var yAxis = d3.axisLeft(y);
+            svg.select("#y")
+              .attr("class", "axisWhite")
+              .attr("transform", "translate(" + margin.left + ", 0)")
+              .transition().duration(frequency / 2)
+              .call(yAxis);
+
+            function zeroState(selection){
+              selection
+                .attr("height", 0)
+                .attr("y", y(0));
+            }
+
+            function barPosition(selection){
+              selection
+              .attr("height", function(d){
+                return barHeight(d.users);
+              })
+                .attr("y", function(d){      // invert the y so bars come from bottom
+                  return y(d.users);
+                })
+            }
+
+
+              var xAxis = d3.axisBottom(x)
+              .tickFormat(function(d) {
+                var dataPoint = data[d - 1];
+                if (dataPoint) {
+                  var time = dataPoint.timestamp;
+                  var diff = new Date() - time;
+                  var secondsAgo = Math.round(diff / 1000);
+                  if (secondsAgo === 0) {
+                    return "Now";
+                  }
+                  else {
+                    var word = secondsAgo === 1 ? "second" : "seconds";
+                    return secondsAgo + " " + word + " ago";
+                  }
+                }
+                else {
+                  return "";
+                }
+              })
+              svg.select("#x")
+                .attr("class", "axisWhite")
+                .attr("transform", "translate(0, " + (chartHeight + margin.top) + ")")
+                .call(xAxis);
+            
+
+
+            // DATA BINDING 
+            // create a variable for the bars drawn onto svg
+            var bars = svg.select("#shapes").selectAll(".bar")  // . is css for class
+              .data(data, function(d){
+                return d.timestamp;
+              });   
+
+             // enter
+            var enterBars = bars.enter().append("rect")
+              .attr("class", "bar")
+              .attr("width", barWidth)
+              .attr("x", function(d, i){      // add the x scale
+                return x(i + 1);
+              })
+              .attr("fill", "#BDD180")
+              .call(zeroState)
+              .transition().duration(frequency / 2)
+              .call(barPosition);
+
+            // update
+            bars
+            .transition().duration(frequency/2)
+            .attr("fill", "#565656")
+            .attr("x", function(d, i){
+                return x(i + 1);
+              })
+              .call(barPosition);
+              
+
+            // exit
+            bars.exit()
+              .attr("opacity", 0.5)
+              .transition().duration(frequency/2)
+              .call(zeroState)
+              .remove();
+            
+          });
+    
+      }
+    
+      // run the function with () 
+      fetchData(); // print instant response 
+      setInterval(fetchData, frequency); // print every 10 seconds
+    </script>
+
+    </div>
+
+    
+</body>
+</html>
