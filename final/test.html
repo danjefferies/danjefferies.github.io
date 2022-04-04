@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> Run for Roses </title> 
+    <link rel="stylesheet" href="test.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" >
+    <link rel="shortcut icon" type="image/png" href="./images/fav-icon.png">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+<div id="banner" style="background-image: url(./images/secretariat2copy.jpg)">
+    <h1>A Run for the Roses <span style="color:#f3ad3d;">(& Your Money)</span></h1>
+    <p> Is there a secret formula to winning the Kentucky Derby?</p>
+    <p>
+      Created by Danica Jefferies
+    </p>
+</div>
+
+<div id="main-content">
+    <div id="intro">
+        <article>
+            <h2> Introduction </h2>
+
+            <p> For nearly the last 150 years, 20 Thoroughbred horses ridden by jockeys rarely over 5 feet tall line up in a metal cage before taking off down a dirt track, galloping a mile-and-a-quarter to the finish line, where the winner is met with roses and a million dollar purse. </p>
+
+            <p>Now held every first Saturday in May, the Kentucky Derby is often referred to as “the most exciting two minutes in sports” — and for good reason. If you're great at probability, or lucky, you theoretically also have the chance to win some big bucks off a dime.</p>
+
+            <p>Let's get into the basics of betting on horse racing!</p>
+        </article>
+    </div>
+
+    <div id="slides">
+        <div class="images">
+          <img class="slide" src="./images/image1.jpg">
+          <img class="slide" src="./images/image2.jpg">
+          <img class="slide" src="./images/aristides2.jpg">
+          <img class="slide" src="./images/image4.jpg">
+          <img class="slide" src="./images/image5.jpg">
+        </div>
+  </div>
+
+
+    <div id="analysis">
+        <article>
+            <h2>Basics of Betting</h2>
+            <p>I was an avid horserace betting aficienado from the ripe old age of nine to 14. My strategy was built from experimentation with the information provided by previous performance tables in daily racing programs.</p>
+
+            <p>The most common and low stakes racing wagers are the </p>
+                <ul>
+                    <li> Win </li>
+                    <li> Win Place Show, one horse that can place anywhere 1st through 3rd</li>
+                    <li> Exacta, first two places in order</li>
+                    <li> Trifecta, first three places in order </li>
+                </ul>
+            <p>Most bets cost $1 to place and although not easy, it's low stakes and high reward to place a</p>
+                <ul>
+                    <li> Superfecta, first four places in order, minimum bet of $0.10</li>
+                </ul> 
+            <p>On top of this, any bet made in the exact order of finish, can be made a "box," where the order no longer matters. But these bets are often 2-3x as much to make. Larger chance of winning, more you pay, less you earn.</p>
+
+            <div id="programs">
+                <img src="./images/old_program.jpg">
+                <img src="./images/howtoprogram.jpg">
+             </div>
+
+
+            <p>If you're like my dad and enjoy losing and low-risk equally, you'll place an insane amount of "10-cent Superfectas" on each race, trying to guess tens of combinations for the first four places. So imagine that once you've mastered the art of probability, how much could you win by placing $1 Superfectas?</p>
+
+            <p>The lowest-paying $1 Superfecta to be bet on the Kentucky Derby occurred in 1997 on Silver Charm, a horse with 4/1 odds. Betters won $350.00 – a considerable prize back then and today. But in the last 20 years, the Superfecta has paid <span>a median prize of $40,000. The three greatest payouts reached $101,285, $557,000, and $864,253.50 respectively. </span></p>
+
+            <p>As mentioned, this is dependent upon the horse's odds. When the odds are greater, the horse is considered a "longshot," and the payout rises directly and considerably. The next question is, how do you know who to bet on?</p>
+
+         <h2>Research Questions</h2>
+            <p> To get this data, I performed an HTML webscape on Wikipedia tables from the <a href="https://en.wikipedia.org/wiki/Kentucky_Derby#Winners" target="blank" rel="noopener noreferrer">Kentucky Derby</a> page. </p>
+            
+            <p>I manually added each horse's triple crown status, the state they were bred in, their odds, starts, wins/places/shows, chances they placed 1st through 3rd in their races, and the superfecta payouts since the late 90s.</p>
+
+            <p> Moreover, these are some of the questions I'd like to answer:</p>
+            <ul>
+                <li><b>Is the modern racehorse bred to be faster?</b> Since the late 1800s</li>
+                <li>Should you bet on a specific jockey or trainer?</li>
+                <li>Is Triple Crown status dependent on ____?</li>
+            </ul>
+
+            <p>Some of the variables include:</p>
+            <ul>
+                <li>Track Condition</li>
+                <li>Time</li>
+                <li>Amount of times the jockey has won the derby</li>
+                <li>Triple Crown Status</li>
+                <li>Bred in x state</li>
+                <li>Odds</li>
+                <li>Starts</li>
+                <li>Win, Place, Show</li>
+                <li>WPS ratio</li>
+                <li>Superfecta payout</li>
+
+            </ul>
+        </article>
+    </div>
+
+    <div id="vis--container">
+        <article>
+            <h2>Have horses gotten faster over the past 148 years?</h2>
+            <svg id="chart1"></svg>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend egestas aliquet. Suspendisse non felis sed felis pellentesque convallis quis eget arcu.</p>
+        </article>
+    </div>
+
+
+    <div id="vis--container">
+        <article>
+            <h2>Which training tycoons are dominating the industry?</h2>
+            <svg id="chart2"></svg>
+             <p>(Bob Baffert controversy) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend egestas aliquet. Suspendisse non felis sed felis pellentesque convallis quis eget arcu.</p>
+        </article>
+    </div>
+</div>
+
+<div id="tooltip">
+    Year: <span id="year"></span>
+    <br />
+    Horse: <span id="winner"></span>
+    <br />
+    Trainer: <span id="trainer"></span>
+    <br />
+    WPS Ratio: <span id="wps_ratio"></span>
+    <br />
+    Payout: $<span id="payout"></span>
+  </div>
+
+    <div class="footer">
+        <a href="#banner">Back to Top</a>
+    </div>
+
+    <!-- scripts go here-->
+    <script src="./parallax.js"></script>
+    <script src="test.js"></script>
+    <script src="./chart2.js"></script>
+
+</body>
+</html>

@@ -1,17 +1,43 @@
+body {
+    margin: 10px;
+    background-color: #BDD180;
+    color: black;
+    text-align: left;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 h3 {
     color:black;
-    background-color: #BDD180;
-    text-align: center; 
-    height: 30px;
-    width: 25%;
-    margin: 10px;
-    padding: 10px;
+    background-color: #FFFFFF;
+    width: 8em;
+    margin: 8px;
+    padding: 8px;
 }
 
-p.indent {
-    text-indent: 30px;
+h2.indent{
+    text-indent: 15px;
 }
 
-.customIndent {
-    margin-left: 35px;
+#final {
+    background-color: #cd395b;
+    color: #FFFFFF;
+    width: 8em;
+}
+
+ul {
+    color: white;
+}
+
+a:link {
+    color: black; 
+    text-decoration: none;
+}
+
+a:visited {
+    color:#cd395b;
+}
+
+a:hover {
+    color:#1c1c1c;
+    background-color: #ebf952;
 }
