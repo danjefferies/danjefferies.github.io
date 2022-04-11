@@ -150,16 +150,36 @@ article {
     align-items: center;
 }
 
-svg {
-    border: 1px solid #EC144C;
-    height: 500px;
-    width: 85%;
-    display: block;
-    margin: auto;
+.vis-update > button:focus {
+    background-color: #303030;
+    color: #f3ad3d;
 }
 
+.vis-update > button:active {
+    background-color: #303030;
+    color: #f3ad3d;
+}
+
+
+#here {
+    height: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    visibility: hidden;
+    background-color:#392F2D;
+    color: white;
+    font-size: 1em;
+    padding: 0.5em;
+    border: 1px solid;
+    border-color: black;
+  }
+
 .footer {
-    height: 5vh;
+    height: 3vh;
     margin-top: 100px;
     padding: 50px 20%;
     text-align: center;

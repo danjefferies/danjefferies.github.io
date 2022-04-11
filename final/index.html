@@ -120,17 +120,22 @@
 
     <div id="vis--container">
         <article>
-            <h2>Winning horse win-place-show ratios by era</h2>
+            <h2>Which training tycoons are dominating the industry?</h2>
+            <svg id="chart1"></svg>
+             <p>[A discussion of this chart goes here]</p>
         </article>
-        <div class="vis-update">
-            <button id="era1_button">1875-1924</button>
-            <button id="era2_button">1925-1974</button>
-            <button id="era3_button">1975-2021</button>
-        </div>
-        <div id="here"></div>
-        <article>
-            <p>[A discussion of this chart goes here]</p>
-        </article>
+    </div>
+
+    <div id="tooltip">
+        Year: <span id="year"></span>
+        <br />
+        Horse: <span id="winner"></span>
+        <br />
+        Trainer: <span id="trainer"></span>
+        <br />
+        WPS Ratio: <span id="wps_ratio"></span>
+        <br />
+        Payout: $<span id="payout"></span>
     </div>
 
 </div>
@@ -140,7 +145,7 @@
     </div>
 
     <!-- scripts go here-->
-    <script src="./chart2.js"></script>
+    <script src="./chart.js"></script>
     <script src="./parallax.js"></script>
     <script src="test.js"></script>
 
