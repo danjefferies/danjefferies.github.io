@@ -1,30 +1,30 @@
 year,winner,jockey,trainer,owner,distance_mi,track_condition,time,triple_crown,odds_high,odds_low,odds,bred_in,sex,starts,win,place,show,wps,wps_ratio,superfecta_payout,trainer_wins,jockey_wins,era
-2021,Mandaloun,Florent Geroux,Brad Cox,Juddmonte Farm,1.25,Fast,2:01.02,F,26,1,26/1,Kentucky,M,9,6,1,1,8,0.889,"9,456.40",1,1,era3
-2020,Authentic,John Velazquez,Bob Baffert,"Spendthrift Farm LLC, MyRaceHorse Stable, Madaket Stables LLC, Starlight Racing",1.25,Fast,2:00.61,F,8,1,8/1,Kentucky,M,8,6,2,0,8,1.000,"7,925.80",6,3,era3
-2019,Country House,Flavien Prat,Bill Mott,"Mrs. J.V. Shields Jr., E. J. M. McFadden Jr. and LNJ Foxwoods",1.25,Sloppy,2:03.93,F,30,1,30/1,Kentucky,M,7,2,2,1,5,0.714,"51,400.10",1,1,era3
-2018,Justify,Mike E. Smith,Bob Baffert,"China Horse Club, Head of Plains Partners, Starlight Racing, WinStar Farm",1.25,Sloppy,2:04.20,T,3,1,3/1,Kentucky,M,6,6,0,0,6,1.000,"19,618.20",6,2,era3
-2017,Always Dreaming,John Velazquez,Todd Pletcher,"MeB Racing, Brooklyn Boyz, Teresa Viola, St. Elias, Siena Farm, West Point",1.25,Wet Fast (sealed),2:03.59,F,9,2,9/2,Kentucky,M,11,4,2,2,8,0.727,"75,974.50",2,3,era3
+2021,Mandaloun,Florent Geroux,Brad Cox,Juddmonte Farm,1.25,Fast,2:01.02,F,26,1,26/1,Kentucky,M,9,6,1,1,8,0.889,9456.40,1,1,era3
+2020,Authentic,John Velazquez,Bob Baffert,"Spendthrift Farm LLC, MyRaceHorse Stable, Madaket Stables LLC, Starlight Racing",1.25,Fast,2:00.61,F,8,1,8/1,Kentucky,M,8,6,2,0,8,1.000,7925.80,6,3,era3
+2019,Country House,Flavien Prat,Bill Mott,"Mrs. J.V. Shields Jr., E. J. M. McFadden Jr. and LNJ Foxwoods",1.25,Sloppy,2:03.93,F,30,1,30/1,Kentucky,M,7,2,2,1,5,0.714,51400.10,1,1,era3
+2018,Justify,Mike E. Smith,Bob Baffert,"China Horse Club, Head of Plains Partners, Starlight Racing, WinStar Farm",1.25,Sloppy,2:04.20,T,3,1,3/1,Kentucky,M,6,6,0,0,6,1.000,19618.20,6,2,era3
+2017,Always Dreaming,John Velazquez,Todd Pletcher,"MeB Racing, Brooklyn Boyz, Teresa Viola, St. Elias, Siena Farm, West Point",1.25,Wet Fast (sealed),2:03.59,F,9,2,9/2,Kentucky,M,11,4,2,2,8,0.727,75974.50,2,3,era3
 2016,Nyquist,Mario Gutierrez,Doug O'Neill,J. Paul Reddam,1.25,Fast,2:01.31,F,5,2,5/2,Kentucky,M,11,8,0,1,9,0.818,542.10,2,2,era3
 2015,American Pharoah,Victor Espinoza,Bob Baffert,"Zayat Stables, LLC",1.25,Fast,2:03.02,T,3,1,3/1,Kentucky,M,11,9,1,0,10,0.909,634.10,6,3,era3
-2014,California Chrome,Victor Espinoza,Art Sherman,Steve Coburn & Perry Martin,1.25,Fast,2:03.66,F,5,2,5/2,California,M,27,16,4,1,21,0.778,"7,691.90",1,3,era3
-2013,Orb,Joel Rosario,Claude McGaughey III,Stuart S. Janney III & Phipps Stable,1.25,Sloppy,2:02.89,F,11,2,11/2,Kentucky,M,12,5,0,3,8,0.667,"28,542.00",1,1,era3
-2012,I'll Have Another,Mario Gutierrez,Doug O'Neill,J. Paul Reddam,1.25,Fast,2:01.83,F,15,1,15/1,Kentucky,M,7,5,1,0,6,0.857,"48,046.40",2,2,era3
-2011,Animal Kingdom,John Velazquez,H. Graham Motion,Team Valor International,1.25,Fast,2:02.04,F,21,1,21/1,Kentucky,M,12,5,5,0,10,0.833,"24,063.00",1,3,era3
-2010,Super Saver,Calvin Borel,Todd Pletcher,WinStar Farm,1.25,Sloppy,2:04.45,F,8,1,8/1,Kentucky,M,9,3,2,1,6,0.667,"101,284.60",2,3,era3
-2009,Mine That Bird,Calvin Borel,Bennie L. Woolley Jr.,Double Eagle Ranch et al.,1.25,Sloppy,2:02.66,F,51,1,51/1,Kentucky,M,18,5,2,1,8,0.444,"557,006.40",1,3,era3
-2008,Big Brown,Kent Desormeaux,Richard E. Dutrow Jr.,IEAH Stables / P. Pompa,1.25,Fast,2:01.82,F,12,5,12/5,Kentucky,M,8,7,0,0,7,0.875,"58,737.80",1,3,era3
-2007,Street Sense,Calvin Borel,Carl Nafzger,James B. Tafel,1.25,Fast,2:02.17,F,5,1,5/1,Kentucky,M,13,6,4,2,12,0.923,"29,046.40",2,3,era3
-2006,Barbaro,Edgar Prado,Michael R. Matz,Lael Stables,1.25,Fast,2:01.36,F,6,1,6/1,Kentucky,M,7,6,0,0,6,0.857,"84,860.40",1,1,era3
-2005,Giacomo,Mike E. Smith,John Shirreffs,Jerry & Ann Moss,1.25,Fast,2:02.75,F,50,1,50/1,Kentucky,M,16,3,2,5,10,0.625,"864,253.50",1,2,era3
-2004,Smarty Jones,Stewart Elliott,John Servis,Someday Farm,1.25,Sloppy,2:04.06,F,4,1,4/1,Pennsylvania,M,9,8,1,0,9,1.000,"41,380.20",1,1,era3
-2003,Funny Cide,José A. Santos,Barclay Tagg,Sackatoga Stable,1.25,Fast,2:01.19,F,13,1,13/1,New York,M,38,11,6,8,25,0.658,"2,795.80",1,1,era3
-2002,War Emblem,Victor Espinoza,Bob Baffert,Thoroughbred Corp.,1.25,Fast,2:01.13,F,6,1,6/1,Kentucky,M,13,7,0,0,7,0.538,"91,764.50",6,3,era3
-2001,Monarchos,Jorge F. Chavez,John T. Ward Jr.,John C. Oxley,1.25,Fast,1:59.97,F,10,1,10/1,Kentucky,M,10,4,1,3,8,0.800,"62,986.90",1,1,era3
-2000,Fusaichi Pegasus,Kent Desormeaux,Neil Drysdale,Fusao Sekiguchi,1.25,Fast,2:01.0,F,2,1,2/1,Kentucky,M,9,6,2,0,8,0.889,"1,635.40",1,3,era3
-1999,Charismatic,Chris Antley,D. Wayne Lukas,Bob & Beverly Lewis,1.25,Fast,2:03.2,F,31,1,31/1,Kentucky,M,17,5,2,4,11,0.647,"24,015.50",4,2,era3
-1998,Real Quiet,Kent Desormeaux,Bob Baffert,Michael E. Pegram,1.25,Fast,2:02.2,F,17,2,17/2,Kentucky,M,20,6,5,6,17,0.850,"3,007.40",6,3,era3
+2014,California Chrome,Victor Espinoza,Art Sherman,Steve Coburn & Perry Martin,1.25,Fast,2:03.66,F,5,2,5/2,California,M,27,16,4,1,21,0.778,7691.90,1,3,era3
+2013,Orb,Joel Rosario,Claude McGaughey III,Stuart S. Janney III & Phipps Stable,1.25,Sloppy,2:02.89,F,11,2,11/2,Kentucky,M,12,5,0,3,8,0.667,28542.00,1,1,era3
+2012,I'll Have Another,Mario Gutierrez,Doug O'Neill,J. Paul Reddam,1.25,Fast,2:01.83,F,15,1,15/1,Kentucky,M,7,5,1,0,6,0.857,48046.40,2,2,era3
+2011,Animal Kingdom,John Velazquez,H. Graham Motion,Team Valor International,1.25,Fast,2:02.04,F,21,1,21/1,Kentucky,M,12,5,5,0,10,0.833,24063.00,1,3,era3
+2010,Super Saver,Calvin Borel,Todd Pletcher,WinStar Farm,1.25,Sloppy,2:04.45,F,8,1,8/1,Kentucky,M,9,3,2,1,6,0.667,101284.60,2,3,era3
+2009,Mine That Bird,Calvin Borel,Bennie L. Woolley Jr.,Double Eagle Ranch et al.,1.25,Sloppy,2:02.66,F,51,1,51/1,Kentucky,M,18,5,2,1,8,0.444,557006.40,1,3,era3
+2008,Big Brown,Kent Desormeaux,Richard E. Dutrow Jr.,IEAH Stables / P. Pompa,1.25,Fast,2:01.82,F,12,5,12/5,Kentucky,M,8,7,0,0,7,0.875,58737.80,1,3,era3
+2007,Street Sense,Calvin Borel,Carl Nafzger,James B. Tafel,1.25,Fast,2:02.17,F,5,1,5/1,Kentucky,M,13,6,4,2,12,0.923,29046.40,2,3,era3
+2006,Barbaro,Edgar Prado,Michael R. Matz,Lael Stables,1.25,Fast,2:01.36,F,6,1,6/1,Kentucky,M,7,6,0,0,6,0.857,84860.40,1,1,era3
+2005,Giacomo,Mike E. Smith,John Shirreffs,Jerry & Ann Moss,1.25,Fast,2:02.75,F,50,1,50/1,Kentucky,M,16,3,2,5,10,0.625,864253.50,1,2,era3
+2004,Smarty Jones,Stewart Elliott,John Servis,Someday Farm,1.25,Sloppy,2:04.06,F,4,1,4/1,Pennsylvania,M,9,8,1,0,9,1.000,41380.20,1,1,era3
+2003,Funny Cide,José A. Santos,Barclay Tagg,Sackatoga Stable,1.25,Fast,2:01.19,F,13,1,13/1,New York,M,38,11,6,8,25,0.658,2795.80,1,1,era3
+2002,War Emblem,Victor Espinoza,Bob Baffert,Thoroughbred Corp.,1.25,Fast,2:01.13,F,6,1,6/1,Kentucky,M,13,7,0,0,7,0.538,91764.50,6,3,era3
+2001,Monarchos,Jorge F. Chavez,John T. Ward Jr.,John C. Oxley,1.25,Fast,1:59.97,F,10,1,10/1,Kentucky,M,10,4,1,3,8,0.800,62986.90,1,1,era3
+2000,Fusaichi Pegasus,Kent Desormeaux,Neil Drysdale,Fusao Sekiguchi,1.25,Fast,2:01.0,F,2,1,2/1,Kentucky,M,9,6,2,0,8,0.880,1635.40,1,3,era3
+1999,Charismatic,Chris Antley,D. Wayne Lukas,Bob & Beverly Lewis,1.25,Fast,2:03.2,F,31,1,31/1,Kentucky,M,17,5,2,4,11,0.647,24015.50,4,2,era3
+1998,Real Quiet,Kent Desormeaux,Bob Baffert,Michael E. Pegram,1.25,Fast,2:02.2,F,17,2,17/2,Kentucky,M,20,6,5,6,17,0.850,3007.40,6,3,era3
 1997,Silver Charm,Gary Stevens,Bob Baffert,Bob & Beverly Lewis,1.25,Fast,2:02.4,F,4,1,4/1,Florida,M,24,12,7,2,21,0.875,350.00,6,3,era3
-1996,Grindstone,Jerry Bailey,D. Wayne Lukas,Overbrook Farm,1.25,Fast,2:01.0,F,6,1,6/1,Kentucky,M,6,3,2,0,5,0.833,"5,844.20",4,2,era3
+1996,Grindstone,Jerry Bailey,D. Wayne Lukas,Overbrook Farm,1.25,Fast,2:01.0,F,6,1,6/1,Kentucky,M,6,3,2,0,5,0.833,5844.20,4,2,era3
 1995,Thunder Gulch,Gary Stevens,D. Wayne Lukas,Michael Tabor,1.25,Fast,2:01.2,F,25,1,25/1,Kentucky,M,16,9,2,2,13,0.813,,4,3,era3
 1994,Go for Gin,Chris McCarron,Nick Zito,William J. Condren & Joseph M. Cornacchia,1.25,Sloppy,2:03.6,F,9,1,9/1,Kentucky,M,19,5,7,2,14,0.737,,2,2,era3
 1993,Sea Hero,Jerry Bailey,MacKenzie Miller,Rokeby Stables,1.25,Fast,2:02.4,F,13,1,13/1,Virginia,M,24,6,3,4,13,0.542,,1,2,era3

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title> Run for Roses </title> 
-    <link rel="stylesheet" href="test.css"/>
+    <link rel="stylesheet" href="styles.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" >
     <link rel="shortcut icon" type="image/png" href="./images/fav-icon.png">
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -45,7 +45,7 @@
     <div id="analysis">
         <article>
             <h2>Basics of Betting</h2>
-            <p>I was an avid horse race betting aficionado from the ripe old ages of nine to 14. My strategy was built on navigating and experimenting with the information provided by previous performance tables in daily racing programs. This includes odds, career starts, trainer and jockey, among other aspects.</p>
+            <p>In my younger years, my betting strategy was built on navigating and experimenting with the information provided by previous performance tables in daily racing programs. This includes odds, career starts, trainer and jockey, among other aspects.</p>
 
             <p class="accent">The most common and low stakes racing wagers are the </p>
                 <ul>
@@ -78,20 +78,12 @@
             
             <p>I manually added each horse's triple crown status, the state they were bred in, their odds, starts, wins/places/shows, chances they placed 1st through 3rd in their races, and the superfecta payouts since the late 90s.</p>
 
-            <p class="accent"> Moreover, these are some of the questions I'd like to answer:</p>
-            <ul>
-                <li>Is the modern racehorse bred to be faster?</li>
-                <li>Should you bet on a specific jockey or trainer?</li>
-                <li>Racehorses retire early nowadays. How many races did they enter before?</li>
-            </ul>
-
             <p class="accent">These are the variables in the dataset</p>
             <div id="vars">
             <p> Based on horse:</p>
             <ul>
                 <li>Triple Crown status</li>
                 <li>State bred in</li>
-                <li>Sex</li>
                 <li>Odds</li>
                 <li>Career starts</li>
                 <li>Career wins, places, shows</li>
@@ -103,8 +95,8 @@
                 <li>Jockey</li>
                 <li>Trainer</li>
                 <li>Owner</li>
-                <li>Amount of times the jockey has won the derby</li>
-                <li>Amount of times the trainer has won the derby</li>
+                <li>Number of derby wins per jockey</li>
+                <li>Number of derby wins per trainer</li>
             </ul>
 
             <p> Situational:</p>
@@ -112,42 +104,111 @@
                 <li>Track condition</li>
                 <li>Time</li>
                 <li>Superfecta payout</li>
-
             </ul>
             </div>
+
+            <p class="accent" style="font-weight: bold;"> Moreover, I aimed to answer these questions:</p>
+            <ul> 
+                <li>Are the same trainers winning more derbies?</li> 
+                <li>Which era has the most Triple Crown winners?</li> 
+                <li>Racehorses retire early. Has the number of career starts changed?</li>
+            </ul>
         </article>
     </div>
 
     <div id="vis--container">
         <article>
-            <h2>Which training tycoons are dominating the industry?</h2>
-            <svg id="chart1"></svg>
-             <p>[A discussion of this chart goes here]</p>
+            <h2>The Win-Place-Show Ratios of Kentucky Derby Winners by Era</h2>
         </article>
-    </div>
+        <div class="vis-update">
+            <button id="era1">1875-1924</button>
+            <button id="era2">1925-1974</button>
+            <button id="era3">1975-2021</button>
+        </div>
+        
 
-    <div id="tooltip">
-        Year: <span id="year"></span>
-        <br />
-        Horse: <span id="winner"></span>
-        <br />
-        Trainer: <span id="trainer"></span>
-        <br />
-        WPS Ratio: <span id="wps_ratio"></span>
-        <br />
-        Payout: $<span id="payout"></span>
+        <div class="border-legend--container">
+            <div class="border-legend--item">
+                <svg height="21" width="21">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color: #f3ad3d;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color: #DC0635;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="tc-legend" cx="10.5" cy="10.5" r="8"/>
+                </svg>
+                <div class="legend-circle--label">
+                    Triple Crown winner
+                </div>
+            </div>
+            <div class="border-legend--item">
+                <svg height="21" width="21">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color: #f3ad3d;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color: #DC0635;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="normal-legend" cx="10.5" cy="10.5" r="8"/>
+                </svg>
+                <div class="legend-circle--label">
+                    Won at least the Kentucky Derby
+                </div>
+            </div>
+            <div class="border-legend--item">
+                <div
+                    class="legend-rect"></div>
+                <svg height="20" width="100">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color: #f3ad3d;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color: #DC0635;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect y="3px" height="15" width="100" fill="url(#grad1)" opacity="0.95"/>
+                </svg>
+                <div class="legend-rect--label">
+                    Trainer's total wins (0 to 6)
+                </div>
+            </div>
+        </div>
+
+        <div id="here"></div>
+        <article>
+            <div id="findings">
+                <h3>So did I answer my questions?</h3>
+                <p> <span class="simple">Yes,</span> the frequency of dark pink points increases, indicating that trainers seem to have gotten better (over the past century) at winning the derby multiple times!</p> 
+                <p> <span class="simple">Yes,</span> there were three more Triple Crown winners in the second era, between 1925 to 1974, than the most recent one. </p>
+                <p> <span class="simple"> And yes,</span> the number of career starts has decreased drastically over the past century from over 100 to 35 at maximum. </p>
+            </div>
+  
+
+            <svg id="divider" height="10px" width="100%">
+                <line x1="0" y1="50%" x2="100%" y2="50%" />
+            </svg>
+
+
+
+            <div id="discussion">
+                <h2>How can this chart inform your betting strategy? A few takeaways:</h2>
+                <p>Even when a horse's WPS ratio is low, look into the trainer's record.</p>
+                <p>Incorporate betting on the long-shot, even just for $0.10.</p>
+                <p>More racehorse career starts =/= more experience...they're probably tired!</p>
+            </div>
+
+        </article>
     </div>
 
 </div>
 
     <div class="footer">
-        <a href="#banner">Back to Top</a>
+        <p>Happy betting, thanks for reading! <br>
+            <a href="#banner">Back to top</a> <br></p>
     </div>
 
     <!-- scripts go here-->
-    <script src="./chart.js"></script>
-    <script src="./parallax.js"></script>
-    <script src="test.js"></script>
+    <script src="./script.js"></script>
 
 </body>
 </html>
