@@ -216,7 +216,7 @@ circles
                 Odds: <b>${d.odds_high}/${d.odds_low}</b> <br>
                 WPS: <b>${d.wps_ratio}</b><br>
                 Superfecta: <b>$${d.superfecta_payout}</b>`);
-    d3.select(this).attr("stroke", "#DCE4FC").attr("stroke-width", 2);
+    d3.select(this).attr("stroke", "#3f68a5").attr("stroke-width", 3);
 })
 .on("mouseout", function(e, d){
     tooltip.style("visibility", "hidden");
