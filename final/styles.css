@@ -4,7 +4,8 @@
     color: #392F2D;
     color: #E6DDD5; 
     color: #DCE4FC;
-    color: #f3ad3d;*/
+    color: #f3ad3d;
+    color: #3d83f3;*/
 
 /* font palette
     font-family: 'Cormorant Garamond', serif;
@@ -120,6 +121,10 @@ article {
     flex-wrap: wrap; 
 }
 
+h4 {
+    margin: 2em;
+}
+
 .accent {
     color: #DC0635;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -136,7 +141,7 @@ article {
     flex: 1;
     color: #DC0635;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 #vars ul{
@@ -148,6 +153,14 @@ article {
 #vis--container article{
     text-align: left;
     margin: 0;
+}
+
+#vis--container h2 {
+    margin-bottom: 10px;
+}
+
+#warning {
+    margin: 0 0 5px 15px;
 }
 
 #vis--container {
@@ -196,6 +209,7 @@ button {
 
 .border-legend--container {
     margin-top: 0.5em;
+    margin-bottom: 0.5em;
     margin-left: 5%;
 }
 
@@ -211,7 +225,7 @@ button {
     fill: url(#grad1);
     stroke: black;
     stroke-width: 3;
-    opacity: 0.95;
+    opacity: 0.9;
 }
 
 .normal-legend {
@@ -221,7 +235,7 @@ button {
     fill: url(#grad1);
     stroke: black;
     stroke-width: 1;
-    opacity: 0.95;
+    opacity: 0.9;
 
 }
 
@@ -230,6 +244,16 @@ button {
     display: inline-block;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 0.8em;
+}
+
+.longshot-legend {
+    width: 20.8px;
+    height: 20.8px;
+    display: inline-block;
+    fill: black;
+    stroke: url(#grad1);
+    stroke-width: 3;
+    opacity: 0.9;
 }
 
 .legend-rect {
@@ -247,8 +271,11 @@ button {
     align-items: center;
 }
 
-.simple {
-    color: black;
+.gradient {
+    background: -webkit-linear-gradient( #DC0635, #f3ad3d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-weight: bold;
     font-size: 18px;
 }

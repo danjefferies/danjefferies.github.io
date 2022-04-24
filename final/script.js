@@ -126,7 +126,7 @@ d3.csv("kyderby.csv")
    .attr("y", margin.left / 4)
    .attr("transform", "rotate(-90)")
    .attr("text-anchor", "middle")
-   .text("Ratio of times placed 1st-3rd (WPS)");
+   .text("WPS Ratio (times placed 1st-3rd/starts)");
 
 });
 
@@ -175,18 +175,30 @@ circles
        .attr("cx", function(d){ return x(d.starts); })
        .attr("cy", function(d){ return y(d.wps_ratio); })
        .attr("r", 8)
-       .attr("fill-opacity", 0.95)
+       .attr("fill-opacity", 0.9)
        .attr("fill", function(d){
-           return colorScale(d.trainer_wins)
-       })
-       .attr("stroke", "black")
-       .attr("stroke-width", function(d){
-        if (d.triple_crown === "T") {
-            return 3;
-        } else {
-            return 1;
-        }
-    })
+            if (d.odds > 20) {
+                return "black"
+            } else {
+                return colorScale(d.trainer_wins)
+            }
+        })
+        .attr("stroke", function(d){
+            if (d.odds > 20) {
+                return colorScale(d.trainer_wins)
+            } else {
+                return "black";
+            }
+        })
+        .attr("stroke-width", function(d){
+            if (d.odds > 20) {
+                return 3
+            } if (d.triple_crown === "T") {
+                return 3;
+            } else {
+                return 1;
+            }
+        });
 
 // Exit
 circles
@@ -216,24 +228,51 @@ circles
                 Odds: <b>${d.odds_high}/${d.odds_low}</b> <br>
                 WPS: <b>${d.wps_ratio}</b><br>
                 Superfecta: <b>$${d.superfecta_payout}</b>`);
-    d3.select(this).attr("stroke", "#3f68a5").attr("stroke-width", 3);
+    d3.select(this)
+    .attr("fill", function(d){
+        if (d.odds > 20) {
+            return "#3d83f3"
+        } else {
+            return colorScale(d.trainer_wins)
+        }
+    })
+    .attr("stroke", function(d){
+        if (d.odds > 20) {
+            return colorScale(d.trainer_wins)
+        } else {
+            return "#3d83f3";
+        }
+    })
+    .attr("stroke-width", 3);
 })
 .on("mouseout", function(e, d){
     tooltip.style("visibility", "hidden");
     d3.select(this)
-    .attr("fill-opacity", 0.95)
+    .attr("fill-opacity", 0.9)
     .attr("fill", function(d){
-        return colorScale(d.trainer_wins)
+        if (d.odds > 20) {
+            return "black"
+        } else {
+            return colorScale(d.trainer_wins)
+        }
     })
-    .attr("stroke", "black")
+    .attr("stroke", function(d){
+        if (d.odds > 20) {
+            return colorScale(d.trainer_wins)
+        } else {
+            return "black";
+        }
+    })
     .attr("stroke-width", function(d){
-     if (d.triple_crown === "T") {
-         return 3;
-     } else {
-         return 1;
-     }
-        });
-    });
+        if (d.odds > 20) {
+            return 3
+        } if (d.triple_crown === "T") {
+            return 3;
+        } else {
+            return 1;
+        }
+    })
+})
 
 };
 

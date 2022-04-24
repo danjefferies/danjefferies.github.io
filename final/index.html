@@ -69,18 +69,20 @@
 
             <p><span class="accent">The best time to play a Superfecta to maximize your profits is when there  is a large field to choose from. </span>To give you perspective, in a 12-horse race, there are 11,800 superfecta combinations possible. With a 10-Cent denomination, that is a $1,180 bet. So imagine that once you've mastered the art of probability, how much you could win by placing $1 Superfectas!</p>
 
-            <p>The lowest-paying $1 Superfecta to be bet on the Kentucky Derby occurred in 1997 on Silver Charm, a horse with 4/1 odds. Betters won $350.00 – a considerable prize back then and today. But in the last 20 years, the Superfecta has paid <span class="accent">a median prize of $40,000. The three greatest payouts reached $101,285, $557,000, and $864,253.50 respectively. </span></p>
+            <p>The lowest-paying $1 Superfecta to be bet on the Kentucky Derby occurred in 1997 on Silver Charm, a horse with 4/1 odds. Bettors won $350.00 – a considerable prize back then and today. But in the last 20 years, the Superfecta has paid <span class="accent">a median prize of $40,000. The three greatest payouts reached $101,285, $557,000, and $864,253 respectively. </span></p>
 
-            <p>As mentioned, this is dependent upon the horse's odds. When the odds are greater, the horse is considered a "longshot," and the payout rises directly and considerably. The next question is, how do you know who to bet on?</p>
+            <p>As mentioned, this is dependent upon the horse's odds, which are determined by the total money wagered on the horse. When the odds are greater, the horse is considered a "longshot," and the payout rises directly and considerably. Horses with low odds have a higher chance of winning and therefore, pay much less as a reward for predicting their success. The next question is, how do you know who to bet on?</p> 
+
+            <h4 style="text-align: center;"> <span style="color: #DC0635">In short:</span> Earnings are dependent on odds, which are determined by the total money wagered on the horse. If everyone is betting on a particular horse, the odds decrease and perceived chances of winning increases,<br> and everyone wins less $ since the earning pool is split among more of you! </br></h4>
 
          <h2>Research Questions</h2>
-            <p> To get this data, I performed an HTML webscape on Wikipedia tables from the <a href="https://en.wikipedia.org/wiki/Kentucky_Derby#Winners" target="blank" rel="noopener noreferrer">Kentucky Derby</a> page. </p>
+            <p>To retrieve this data, I performed a simple HTML webscrape on Wikipedia tables from the <a href="https://en.wikipedia.org/wiki/Kentucky_Derby#Winners" target="blank" rel="noopener noreferrer">Kentucky Derby</a> page. </p>
             
-            <p>I manually added each horse's triple crown status, the state they were bred in, their odds, starts, wins/places/shows, chances they placed 1st through 3rd in their races, and the superfecta payouts since the late 90s.</p>
+            <p>I manually added each horse's Triple Crown status, the state they were bred in, their odds, starts, wins/places/shows, chances they placed 1st through 3rd in their races, and the superfecta payouts for horses since the late 90s.</p>
 
             <p class="accent">These are the variables in the dataset</p>
             <div id="vars">
-            <p> Based on horse:</p>
+            <p>Based on horse:</p>
             <ul>
                 <li>Triple Crown status</li>
                 <li>State bred in</li>
@@ -95,8 +97,8 @@
                 <li>Jockey</li>
                 <li>Trainer</li>
                 <li>Owner</li>
-                <li>Number of derby wins per jockey</li>
-                <li>Number of derby wins per trainer</li>
+                <li>Jockey's total derby wins</li>
+                <li>Trainer's total derby wins</li>
             </ul>
 
             <p> Situational:</p>
@@ -107,18 +109,20 @@
             </ul>
             </div>
 
-            <p class="accent" style="font-weight: bold;"> Moreover, I aimed to answer these questions:</p>
+            <p class="accent"> Moreover, I aimed to answer these questions:</p>
             <ul> 
                 <li>Are the same trainers winning more derbies?</li> 
                 <li>Which era has the most Triple Crown winners?</li> 
-                <li>Racehorses retire early. Has the number of career starts changed?</li>
+                <li>Racehorses retire early. Do career starts indicate experience?</li>
+                <li>Is betting on the longshot worth it?</li>
             </ul>
         </article>
     </div>
 
     <div id="vis--container">
         <article>
-            <h2>The Win-Place-Show Ratios of Kentucky Derby Winners by Era</h2>
+            <h2>Performance Report of Kentucky Derby Winning Horses by Era</h2>
+            <p id="warning"> Choose an era to view more information about each horse.</p>
         </article>
         <div class="vis-update">
             <button id="era1">1875-1924</button>
@@ -128,6 +132,20 @@
         
 
         <div class="border-legend--container">
+            <div class="border-legend--item">
+                <svg height="21" width="21">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color: #f3ad3d;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color: #DC0635;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="normal-legend" cx="10.5" cy="10.5" r="8"/>
+                </svg>
+                <div class="legend-circle--label">
+                    Won at least the Kentucky Derby
+                </div>
+            </div>
             <div class="border-legend--item">
                 <svg height="21" width="21">
                     <defs>
@@ -150,10 +168,10 @@
                             <stop offset="100%" style="stop-color: #DC0635;stop-opacity:1" />
                         </linearGradient>
                     </defs>
-                    <circle class="normal-legend" cx="10.5" cy="10.5" r="8"/>
+                    <circle class="longshot-legend" cx="10.5" cy="10.5" r="8"/>
                 </svg>
                 <div class="legend-circle--label">
-                    Won at least the Kentucky Derby
+                    Longshot (Odds > 20/1)
                 </div>
             </div>
             <div class="border-legend--item">
@@ -166,7 +184,7 @@
                             <stop offset="100%" style="stop-color: #DC0635;stop-opacity:1" />
                         </linearGradient>
                     </defs>
-                    <rect y="3px" height="15" width="100" fill="url(#grad1)" opacity="0.95"/>
+                    <rect y="3px" height="15" width="100" fill="url(#grad1)" opacity="0.9"/>
                 </svg>
                 <div class="legend-rect--label">
                     Trainer's total wins (0 to 6)
@@ -177,10 +195,11 @@
         <div id="here"></div>
         <article>
             <div id="findings">
-                <h3>So did I answer my questions?</h3>
-                <p> <span class="simple">Yes,</span> the frequency of dark pink points increases, indicating that trainers seem to have gotten better (over the past century) at winning the derby multiple times!</p> 
-                <p> <span class="simple">Yes,</span> there were three more Triple Crown winners in the second era, between 1925 to 1974, than the most recent one. </p>
-                <p> <span class="simple"> And yes,</span> the number of career starts has decreased drastically over the past century from over 100 to 35 at maximum. </p>
+                <h3>Findings Based on Research Questions</h3>
+                <p> <span class="gradient">Yes,</span> the frequency of dark pink points increases, indicating that trainers seem to be getting better at winning the derby multiple times!</p> 
+                <p> <span class="gradient">During the second era,</span> between 1925 and 1974, there were two more Triple Crown winners than the most recent era. </p>
+                <p> <span class="gradient"> More career starts ≠ more experience ≠ more wins.</span> The number of career starts has decreased drastically over the past century from over 100 to 40 at maximum. If anything, the more races a horse runs, the higher the chances of them not always placing 1st-3rd.</p>
+                <p> <span class="gradient"> And yes,</span> there seems to be more longshot winners than there used to be $$$ </p>
             </div>
   
 
@@ -192,9 +211,10 @@
 
             <div id="discussion">
                 <h2>How can this chart inform your betting strategy? A few takeaways:</h2>
-                <p>Even when a horse's WPS ratio is low, look into the trainer's record.</p>
+                <p>Horses with Triple Crown potential often have (1) lower odds and (2) higher WPS ratios. Horses with high odds <br>can still win the derby, just usually not all three races.</br></p>
+                <p>Even when a horse's WPS ratio is low, look into the trainer's record for previous wins.</p>
                 <p>Incorporate betting on the long-shot, even just for $0.10.</p>
-                <p>More racehorse career starts =/= more experience...they're probably tired!</p>
+                <p>More racehorse career starts ≠ more experience...they're probably tired!</p>
             </div>
 
         </article>
